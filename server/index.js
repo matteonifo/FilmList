@@ -6,12 +6,14 @@ const morgan = require('morgan');
 const {check, validationResult} = require('express-validator');
 //Import Dao module for accessing DB
 const dao = require('./dao');
+const cors = require('cors');
 //Create application
 const app = express();
 const port = 3001;
 
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors());
 
 /***  APIs  ***/
 
