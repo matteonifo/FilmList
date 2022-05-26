@@ -1,4 +1,4 @@
-import { Col , Table , Form } from 'react-bootstrap';
+import { Col , Table , Form , Spinner} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 import { useNavigate } from 'react-router-dom';
@@ -8,8 +8,8 @@ function FilmList(props) {
 
     return(
         <Col>
-    <h2>Libreria</h2>
-      <FilmTable form={props.form} modFilm={props.modFilm} dark={props.dark} eliminaFilm={props.eliminaFilm} modificaVoto={props.modificaVoto} modificaPreferito={props.modificaPreferito} films={props.films}></FilmTable>
+    <h2>Film </h2>
+      {props.loading ? <span><Spinner animation="border" variant="primary" />Caricando i film</span> : <FilmTable form={props.form} modFilm={props.modFilm} dark={props.dark} eliminaFilm={props.eliminaFilm} modificaVoto={props.modificaVoto} modificaPreferito={props.modificaPreferito} films={props.films}></FilmTable>}
   </Col>
     )
 }

@@ -132,7 +132,7 @@ app.get('/api/migliori', async (req, res) => {
 
 //GET /api/DaVedere
 
-app.get('/api/DaVedere', async (req, res) => {
+app.get('/api/davedere', async (req, res) => {
     try{
         const filmDaVedere = await dao.filmDaVedere();
         res.status(200).json(filmDaVedere);
@@ -143,7 +143,7 @@ app.get('/api/DaVedere', async (req, res) => {
 
 //GET /api/Recenti
 
-app.get('/api/Recenti', async (req, res) => {
+app.get('/api/recenti', async (req, res) => {
     try{
         const filmRecenti = await dao.filmRecenti();
         res.status(200).json(filmRecenti);

@@ -15,7 +15,7 @@ function Body(props) {
           <Filters dark={props.dark} filtro={props.filtro}  cambiaFiltro={props.cambiaFiltro}/>
         </Col>
         <Col md={8}>
-          <FilmList dark={props.dark} films={props.films} modificaPreferito={props.modificaPreferito} modificaVoto={props.modVoto} eliminaFilm={props.eliminaFilm}/>
+          <FilmList loading={props.loading} dark={props.dark} films={props.films} modificaPreferito={props.modificaPreferito} modificaVoto={props.modVoto} eliminaFilm={props.eliminaFilm}/>
           <Button className="rounded-circle" onClick={ () => navigate('/add') }>+</Button>
         </Col>
     </>

@@ -28,7 +28,7 @@ function FilmForm(props) {
             const cod = film ? film.codice : props.films.length+1;
             const nuovoFilm = {codice: cod, titolo: titolo, preferito: preferito, data: data, rating: voto};
             props.aggiornaFilm(nuovoFilm);
-            navigate('/');
+            navigate('/Tutti');
         }
     }
 
@@ -46,7 +46,7 @@ function FilmForm(props) {
     return (<>
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
-                    <Form.Label>Nome</Form.Label>
+                    <Form.Label>Titolo</Form.Label>
                     <Form.Control required={true} maxLength={20} value={titolo} onChange={ev => setNome(ev.target.value)}></Form.Control>
                 </Form.Group>
                 <Form.Group>
@@ -62,7 +62,7 @@ function FilmForm(props) {
                     <Form.Control type="number" min={0} max={5} value={voto} onChange={ev => handleVoto(ev.target.value)}></Form.Control>
                 </Form.Group>
                 <Button type='submit'>{filmId ? <span>Aggiorna</span> : <span>Aggiungi</span>}</Button>
-                <Button onClick={() => navigate('/')} variant="warning">Cancella</Button>
+                <Button onClick={() => navigate('/Tutti')} variant="warning">Cancella</Button>
             </Form> 
     </>
     )
